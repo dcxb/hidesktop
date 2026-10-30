@@ -1,0 +1,8 @@
+# Keep source and docs as LF in the repository, but ship batch files with CRLF
+# because cmd.exe is picky about line endings inside parenthesised blocks.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ico binary
+*.png binary
+*.exe binary
