@@ -6,6 +6,9 @@
 它用全局低级鼠标钩子识别"桌面空白处的双击"，然后直接控制 Explorer 的桌面图标窗口，
 所以既没有焦点要求，也不会和双击图标打开程序的习惯冲突。
 
+**[⬇ 下载 hidesktop.exe](https://github.com/dcxb/hidesktop/releases/latest)** ·
+Windows 10/11 x64 · 单文件免安装 · 约 300 KB · [更新记录](https://github.com/dcxb/hidesktop/releases)
+
 ---
 
 ## 1. 功能
@@ -25,7 +28,10 @@
 
 ## 2. 快速开始
 
-前置：MinGW-w64（`g++`、`windres` 在 `PATH` 中，实测 g++ 15.2.0 / x86_64-w64-mingw32）。
+**不想自己编译**：直接下载发布好的 [hidesktop.exe](https://github.com/dcxb/hidesktop/releases/latest)
+（单文件，双击即用，见 2.1）。
+
+自己构建：前置 MinGW-w64（`g++`、`windres` 在 `PATH` 中，实测 g++ 15.2.0 / x86_64-w64-mingw32）。
 
 ```bat
 build.bat
@@ -223,3 +229,10 @@ hidesktop/
 - 隐藏图标时顺便隐藏/恢复 `Progman` 的壁纸？不需要，但可加"隐藏任务栏"选项；
 - 用 `WM_DISPLAYCHANGE` / `WM_SETTINGCHANGE` 监听分辨率、主题变化并主动校验状态；
 - 更细的触发策略：仅中键双击、仅在主显示器、双击间隔自定义。
+
+## 7. 许可
+
+[MIT](LICENSE) © 2026 dcxb
+
+构建出的 `hidesktop.exe` 完全自包含（静态链接 MinGW 运行时），可自由分发。
+
